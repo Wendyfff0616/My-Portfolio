@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar } from "./components/NavBar";
 import { Banner } from "./components/Banner";
 // import { Skills } from "./components/Skills";
-// import { Projects } from "./components/Projects";
+import { Projects } from "./components/Projects";
 // import { Contact } from "./components/Contact";
 // import { Footer } from "./components/Footer";
 
@@ -13,10 +13,10 @@ function App() {
     <div className="App">
       <Navbar />
       <Banner />
-      {/* <Skills />
+      {/* {/* <Skills /> */}
       <Projects />
-      <Contact />
-      <Footer />  */}
+      {/* <Contact /> */}
+      {/* <Footer />  */} 
     </div>
   );
 }
