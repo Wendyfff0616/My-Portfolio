@@ -2,6 +2,8 @@ import { Container, Row, Col, Tab, Nav } from 'react-bootstrap';
 import { ProjectCard } from './ProjectCard';
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import projImg1 from "../assets/img/project-img1.png"
+import TrackVisibility from "react-on-screen";
+import { isVisible } from "@testing-library/user-event/dist/utils";
 
 export const Projects = () => {
 
@@ -50,8 +52,15 @@ export const Projects = () => {
             <Container>
                 <Row>
                     <Col>
-                        <h2>Projects</h2>
-                        <p>These are my projects.</p>
+                    
+                    <TrackVisibility>
+                        {({ isVisible }) =>
+                        <div className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                            <h2>Projects</h2>
+                            <p>These are my projects.</p>
+                        </div>}
+                    </TrackVisibility>
+
                         <Tab.Container id="projects-tabs" defaultActiveKey="first">
                             <Nav variant="pills" className='nav-pills mb-5 justify-content-center align-items-center' id="pills-tab">
                                 <Nav.Item>
@@ -60,9 +69,9 @@ export const Projects = () => {
                                 <Nav.Item>
                                     <Nav.Link eventKey="second">UI/UX Design</Nav.Link>
                                 </Nav.Item>
-                                <Nav.Item>
+                                {/* <Nav.Item>
                                     <Nav.Link eventKey="third">Others</Nav.Link>
-                                </Nav.Item>
+                                </Nav.Item> */}
                             </Nav>
                         
                             <Tab.Content>
@@ -101,8 +110,8 @@ export const Projects = () => {
                                         }
                                     </Row>
                                 </Tab.Pane>
-
-                                <Tab.Pane eventKey="third" className="text-center"></Tab.Pane>
+{/* 
+                                <Tab.Pane eventKey="third" className="text-center"></Tab.Pane> */}
                             </Tab.Content>
 
                         </Tab.Container>

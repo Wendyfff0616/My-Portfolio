@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg from "../assets/img/header-img.svg";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
+import { isVisible } from "@testing-library/user-event/dist/utils";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0); // Tracks the current word index in the `toRotate` array
@@ -53,21 +56,34 @@ export const Banner = () => {
     <section className="banner" id="home">
       <Container>
         <Row className="align-items-center">
+
           <Col xs={12} md={6} xl={7}>
-            <span className="tagline">Welcome to my Portfolio</span>
-            <h1>
-              {`Hi, I'm Wendy, a `}
-              <span className="wrap">{text}</span> {/* Display dynamic text */}
-            </h1>
-            <p>
-              The Three C's of My Life: Cats🐈, Crafts🎨, and Computers💻. These
-              three C's represent who I am: curious, creative, and constantly
-              learning.
-            </p>
-            <button onClick={() => console.log("connect")}>
-              Let's connect <ArrowRightCircle size={25} />
-            </button>
+
+            <TrackVisibility>
+            {({ isVisible }) =>
+            <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+
+              <span className="tagline">Welcome to my Portfolio</span>
+
+              <h1>
+                {`Hi, I'm Wendy, a `}
+                <span className="wrap">{text}</span> {/* Display dynamic text */}
+              </h1>
+
+              <p>
+                The Three C's of My Life: Cats🐈, Crafts🎨, and Computers💻. These
+                three C's represent who I am: curious, creative, and constantly
+                learning.
+              </p>
+
+              <button onClick={() => console.log("connect")}>
+                Let's connect <ArrowRightCircle size={25} />
+              </button>
+
+            </div>}
+            </TrackVisibility>
           </Col>
+
           <Col xs={12} md={6} xl={5}>
             <img src={headerImg} alt="Header Img" /> {/* Properly placed image */}
           </Col>

@@ -371,13 +371,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 50px;
   background-color: rgb(255 255 255 / 10%);
   overflow: hidden;
+  padding: 2px;
 }
 .project .nav.nav-pills .nav-item {
-  width: 33.33333%;
+  width: 50%;
 }
 .project .nav.nav-pills .nav-link {
   background-color: transparent;
-  border-radius: 0;
+  /* top-left, top-right, bottom-right, bottom-left */
+  border-radius: 0 50px 50px 0; 
   padding: 17px 0;
   color: #fff;
   width: 100%;
@@ -400,11 +402,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     z-index: -1;
     transition: 0.3s ease-in-out;
 }
+.project .nav.nav-pills .nav-link:hover::before {
+  width: 100%;
+}
 .project .nav.nav-pills .nav-link.active::before {
     width: 100% !important;
 }
 .project .nav.nav-pills .nav-link.active {
     border: 1px solid rgba(255, 255, 255, 1);
+    /* margin: 2px;  */
 }
 .nav-link#projects-tabs-tab-first {
   border: 1px solid rgba(255, 255, 255, 0.5);
