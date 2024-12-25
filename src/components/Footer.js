@@ -1,6 +1,8 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import logo from "../assets/img/logo.svg";
-import navIcon1 from '../assets/img/nav-icon1.svg';
+import github from '../assets/img/github.svg';
+import behance from '../assets/img/behance.svg';
+import linkedin from '../assets/img/linkedin.svg';
 
 export const Footer = () => {
     return (
@@ -12,9 +14,9 @@ export const Footer = () => {
                     </Col>
                     <Col sm={6} className='text-center text-sm-end'>
                         <div className='social-icon'>
-                            <a href="#linkedin"><img src={navIcon1} alt="LinkedIn"/></a>
-                            <a href="#behance"><img src={navIcon1} alt="Behance"/></a>
-                            <a href="#email"><img src={navIcon1} alt="Email"/></a>
+                            <a href="#github"><img src={github} alt="Github"/></a>
+                            <a href="#behance"><img src={behance} alt="Behance"/></a>
+                            <a href="#linkedin"><img src={linkedin} alt="Linkedin"/></a>
                         </div>
                         <p>CopyRight 2024. Wendy Fan. All Right Reserved </p>
                     </Col>

@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Navbar as BootstrapNavbar, Container, Nav } from "react-bootstrap";
+import { Sun, Moon, Github, Mail } from 'lucide-react';
 import logo from '../assets/img/logo.svg';
-import navIcon1 from '../assets/img/nav-icon1.svg';
-
+import github from '../assets/img/github.svg';
+import behance from '../assets/img/behance.svg';
+import linkedin from '../assets/img/linkedin.svg';
 
 export const Navbar = ({ theme, onToggleTheme }) => {
   const [activeLink, setActiveLink] = useState("home"); // Initial state is "home"
@@ -81,31 +83,31 @@ export const Navbar = ({ theme, onToggleTheme }) => {
                 color: "#fff" 
               }}
             >
-              {theme === "dark" ? "Light Mode" : "Dark Mode"}
+              {theme === "dark" ? (<Sun className="w-6 h-6 text-white-400" />)  : (<Moon className="w-6 h-6 text-white-400" />)}
             </button>
 
           <div className="social-icon">
-            <a href="#linkedin">
+            <a href="#github">
                 <img
-                  src={navIcon1}
-                  alt="LinkedIn"
+                  src={github}
+                  alt="Github"
                 />
             </a>
             <a href="#behance">
                 <img
-                  src={navIcon1}
+                  src={behance}
                   alt="Behance"
                 />
             </a>
-            <a href="#email">
+            <a href="#linkedin">
                 <img
-                  src={navIcon1}
-                  alt="Email"
+                  src={linkedin}
+                  alt="LinkedIn"
                 />
             </a>   
           </div>
           <button className="vvd" onClick={() => console.log('connect')}>
-            <span>Let's Connect</span>
+            <span>Email me</span>
           </button>
         </span>
       </BootstrapNavbar.Collapse>
