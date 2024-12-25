@@ -16,7 +16,7 @@ export const Footer = () => {
                             <a href="#behance"><img src={navIcon1} alt="Behance"/></a>
                             <a href="#email"><img src={navIcon1} alt="Email"/></a>
                         </div>
-                        <p>CopyRight 2024. All Right Reserved </p>
+                        <p>CopyRight 2024. Wendy Fan. All Right Reserved </p>
                     </Col>
                 </Row>
             </Container>

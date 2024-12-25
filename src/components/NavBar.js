@@ -4,7 +4,7 @@ import logo from '../assets/img/logo.svg';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 
 
-export const Navbar = () => {
+export const Navbar = ({ theme, onToggleTheme }) => {
   const [activeLink, setActiveLink] = useState("home"); // Initial state is "home"
   const [scrolled, setScrolled] = useState(false);
 
@@ -29,7 +29,12 @@ export const Navbar = () => {
   },[]); // Empty dependency array ensures this effect runs once after the component is mounted
 
   return (
-    <BootstrapNavbar expand="lg" bg="light" variant="light" className={scrolled ? "scrolled": ""}>
+    <BootstrapNavbar
+      expand="lg"
+      bg={theme}
+      variant={theme}
+      className={scrolled ? "scrolled" : ""}
+    >
      <Container>
 
       <BootstrapNavbar.Brand href="#home">
@@ -65,6 +70,20 @@ export const Navbar = () => {
 
         {/* Right-aligned section */}
         <span className="navbar-text">
+          <button 
+              className="theme-toggle-btn" 
+              onClick={onToggleTheme} 
+              style={{ 
+                marginRight: "1rem", 
+                background: "transparent", 
+                border: "2px solid #fff", 
+                borderRadius: "8px", 
+                color: "#fff" 
+              }}
+            >
+              {theme === "dark" ? "Light Mode" : "Dark Mode"}
+            </button>
+
           <div className="social-icon">
             <a href="#linkedin">
                 <img
