@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navbar as BootstrapNavbar, Container, Nav } from "react-bootstrap";
-import { Sun, Moon, Github, Mail } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
+import ThemeToggleButton from './ThemeToggleButton';
 import logo from '../assets/img/logo.svg';
 import github from '../assets/img/github.svg';
 import behance from '../assets/img/behance.svg';
@@ -12,6 +13,14 @@ export const Navbar = ({ theme, onToggleTheme }) => {
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value); // Update the active link state
+  };
+
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+      onUpdateActiveLink("projects");
+    }
   };
 
   useEffect(() => {
@@ -61,7 +70,7 @@ export const Navbar = ({ theme, onToggleTheme }) => {
           <Nav.Link 
             href="#projects"
             className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'}
-            onClick={() => onUpdateActiveLink('projects')}
+            onClick={scrollToProjects}
           >Projects</Nav.Link> 
           <Nav.Link 
           href="#about"
@@ -72,34 +81,22 @@ export const Navbar = ({ theme, onToggleTheme }) => {
 
         {/* Right-aligned section */}
         <span className="navbar-text">
-          <button 
-              className="theme-toggle-btn" 
-              onClick={onToggleTheme} 
-              style={{ 
-                marginRight: "1rem", 
-                background: "transparent", 
-                border: "2px solid #fff", 
-                borderRadius: "8px", 
-                color: "#fff" 
-              }}
-            >
-              {theme === "dark" ? (<Sun className="w-6 h-6 text-white-400" />)  : (<Moon className="w-6 h-6 text-white-400" />)}
-            </button>
+          <ThemeToggleButton theme={theme} onToggleTheme={onToggleTheme} />
 
           <div className="social-icon">
-            <a href="#github">
+            <a href="https://github.com/Wendyfff0616" target="_blank" rel="noopener noreferrer">
                 <img
                   src={github}
                   alt="Github"
                 />
             </a>
-            <a href="#behance">
+            <a href="https://www.behance.net/wenyufan" target="_blank" rel="noopener noreferrer">
                 <img
                   src={behance}
                   alt="Behance"
                 />
             </a>
-            <a href="#linkedin">
+            <a href="https://www.linkedin.com/in/wenyu-fan-a831782b5/" target="_blank" rel="noopener noreferrer">
                 <img
                   src={linkedin}
                   alt="LinkedIn"

@@ -1,7 +1,13 @@
 import { Container, Row, Col, Tab, Nav } from 'react-bootstrap';
 import { ProjectCard } from './ProjectCard';
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import projImg1 from "../assets/img/project-img1.png"
+import projImg1 from "../assets/img/project-img-circuit.jpg"
+import projImg2 from "../assets/img/project-img-cat.jpg"
+import projImg3 from "../assets/img/project-img-mine.jpg"
+import projImg4 from "../assets/img/project-img-inkball.jpg"
+import projImg5 from "../assets/img/project-img-login.jpg"
+import projImg6 from "../assets/img/project-img-portfolio.jpg"
+import projImg21 from "../assets/img/project-img-film.jpg"
 import TrackVisibility from "react-on-screen";
 import { isVisible } from "@testing-library/user-event/dist/utils";
 
@@ -11,44 +17,51 @@ export const Projects = () => {
         {
             title: "My portfolio",
             description: "React, Animated CSS",
-            imgUrl: projImg1,
+            imgUrl: projImg6,
+            url: 'https://github.com/Wendyfff0616/My-Portfolio',
         },
         {
             title: "Login and Registration System",
             description: "JSP, Servlet, JDBC, MySQL",
-            imgUrl: projImg1,
+            imgUrl: projImg5,
+            url: 'https://github.com/Wendyfff0616/Login-and-Registration-System',
         },
         {
             title: "Inkball",
             description: "Java, Processing",
-            imgUrl: projImg1,
+            imgUrl: projImg4,
+            url: 'https://github.com/Wendyfff0616/Inkball',
         },
         {
             title: "Minesweeper",
             description: "Java, Processing",
-            imgUrl: projImg1,
+            imgUrl: projImg3,
+            url: 'https://github.com/Wendyfff0616/Minesweeper',
         },
         {
             title: "FlappyCat",
             description: "Python, Pygame",
-            imgUrl: projImg1,
+            imgUrl: projImg2,
+            url: 'https://github.com/Wendyfff0616/FlappyCat',
         },
         {
             title: "Photonic-Circuit",
             description: "Python",
             imgUrl: projImg1,
+            url: 'https://github.com/Wendyfff0616/Photonic-Circuit',
         }
     ];
     const projects2 = [
         {
             title: "Film-Bridge",
             description: "Figma, UI/UX Design",
-            imgUrl: projImg1,
+            imgUrl: projImg21,
+            url: 'https://www.behance.net/gallery/212820631/Film-Bridge-UIUX-Design-Project',
         },
     ];
 
     return (
-        <section className="project" id="project">
+        <section className="projects" id="projects">
             <Container>
                 <Row>
                     <Col>
